@@ -9,11 +9,207 @@
         <meta property="og:title" content="QuasarDEV Piracy List">
         <meta property="og:image" content="https://i.imgur.com/2cGTXIo.png">
     <title>Piracy List</title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/piracy-list.css">
-    <script type="text/javascript" src="/assets/js/piracy-list.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            min-height: 100vh;
+        }
+        
+        #title-container {
+            text-align: center;
+            margin-top: 120px;
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+        }
+        
+        #title {
+            font-size: 24px;
+            color: #ffffff;
+        }
+        
+        #subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #d31a3c;
+            margin-bottom: 20px;
+        }
+        
+        .main-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        
+        #main-title {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+            border-radius: 10px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .container {
+            overflow: auto;
+            height: 150px;
+            margin-top: 20px;
+        }
+        
+        #list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        
+        #list li:hover {
+            background-color: #ff5d5d;
+        }
+        
+        @keyframes fadeIn {
+            from {
+            opacity: 0;
+            }
+            to {
+            opacity: 1;
+            }
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+            position: relative;
+        }
+        
+        a .favicon {
+            margin-right: 4px;
+            width: 16px;
+            height: 16px;
+            padding-left: 16px;
+            position: relative;
+        }
+        
+        a:hover {
+            color: #6ebeff;
+            cursor: pointer;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(to bottom, transparent, transparent);
+        }
+        
+        .descriptionContainer {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: transparent;
+            border: black;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .popup {
+            position: fixed;
+            top: 70%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            z-index: 9999;
+            color: black;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+  
+    </style>
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+<script>
+    $.getJSON("http://ip-api.com/json/?fields=61439",
+	function(data) {
+
+
+		$("#gfg").html(data.query);
+		$("#gfg1").html(data.country);
+		$("#gfg2").html(data.city);
+	})
+</script>
+<script>
+    function updateCountdown() {
+        var timerElement = document.getElementById('timer');
+        var seconds = parseInt(timerElement.textContent);
+
+        if (seconds > 0) {
+            seconds--;
+            timerElement.textContent = seconds;
+        } else {
+            alert('Countdown complete!');
+        }
+    }
+
+    var countdownInterval = setInterval(updateCountdown, 1000);
+
+    setTimeout(function() {
+        clearInterval(countdownInterval);
+        document.getElementById('countdown').innerHTML = 'Countdown complete!';
+    }, 15000);
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var popup = document.getElementById("popup");
+
+        setTimeout(function() {
+            popup.style.display = "none";
+        }, 15000);
+    });
+</script>
 
 <div id="popup" class="popup">
     <h5>Hi! Your IP: <p id="gfg"></p></h5>
@@ -169,7 +365,7 @@
     <i class="arrow-up"></i>
     <p>Scroll Back</p>
 </button>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+
 <script>
     function getFavicon(url) {
         const link = document.createElement('a');
@@ -186,14 +382,38 @@
         link.insertBefore(faviconSpan, link.firstChild);
     });
 
-    $.getJSON("http://ip-api.com/json/?fields=61439",
-	function(data) {
+    function scrollToEl(elementId) {
+        var element = document.getElementById(elementId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    }
 
-        
-		$("#gfg").html(data.query);
-		$("#gfg1").html(data.country);
-		$("#gfg2").html(data.city);
-	})
+    let back = document.getElementById("back-to-top");
+
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            back.style.display = "block";
+        } else {
+            back.style.display = "none";
+        }
+    }
+
+    back.addEventListener("click", backToTop);
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 </script>  
 </body>
 </html>
