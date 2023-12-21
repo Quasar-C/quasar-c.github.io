@@ -169,6 +169,31 @@
     <i class="arrow-up"></i>
     <p>Scroll Back</p>
 </button>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+<script>
+    function getFavicon(url) {
+        const link = document.createElement('a');
+        link.href = url;
+        return `https://www.google.com/s2/favicons?domain=${link.hostname}`;
+    }
+
+    const links = document.querySelectorAll('.link');
+    links.forEach(link => {
+        const faviconUrl = getFavicon(link.href);
+        const faviconSpan = document.createElement('span');
+        faviconSpan.classList.add('favicon');
+        faviconSpan.style.backgroundImage = `url(${faviconUrl})`;
+        link.insertBefore(faviconSpan, link.firstChild);
+    });
+
+    $.getJSON("http://ip-api.com/json/?fields=61439",
+	function(data) {
+
+        
+		$("#gfg").html(data.query);
+		$("#gfg1").html(data.country);
+		$("#gfg2").html(data.city);
+	})
+</script>  
 </body>
 </html>
