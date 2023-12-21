@@ -1,10 +1,3 @@
-$.getJSON("http://ip-api.com/json/?fields=61439",
-	function(data) {
-		$("#gfg").html(data.query);
-		$("#gfg1").html(data.country);
-		$("#gfg2").html(data.city);
-	})
-
 function updateCountdown() {
 	var timerElement = document.getElementById('timer');
 	var seconds = parseInt(timerElement.textContent);
@@ -79,3 +72,10 @@ function backToTop() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 }
+
+$.getJSON("http://ip-api.com/json/?fields=61439",
+function(data) {
+	$("#gfg").html(data.query);
+	$("#gfg1").html(data.country);
+	$("#gfg2").html(data.city);
+})
