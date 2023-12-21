@@ -34,21 +34,6 @@ function scrollToEl(elementId) {
 	}
 }
 
-function getFavicon(url) {
-	const link = document.createElement('a');
-	link.href = url;
-	return `https://www.google.com/s2/favicons?domain=${link.hostname}`;
-}
-
-const links = document.querySelectorAll('.link');
-links.forEach(link => {
-	const faviconUrl = getFavicon(link.href);
-	const faviconSpan = document.createElement('span');
-	faviconSpan.classList.add('favicon');
-	faviconSpan.style.backgroundImage = `url(${faviconUrl})`;
-	link.insertBefore(faviconSpan, link.firstChild);
-});
-
 let back = document.getElementById("back-to-top");
 
 window.onscroll = function() {
@@ -72,10 +57,3 @@ function backToTop() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 }
-
-$.getJSON("http://ip-api.com/json/?fields=61439",
-function(data) {
-	$("#gfg").html(data.query);
-	$("#gfg1").html(data.country);
-	$("#gfg2").html(data.city);
-})
