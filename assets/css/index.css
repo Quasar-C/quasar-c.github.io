@@ -8,6 +8,10 @@ body {
     min-height: 100vh
 }
 
+noscript {
+    display: block;
+}
+
 h3 {
     color: #000000;
 }
