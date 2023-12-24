@@ -63,6 +63,15 @@
         )
             return false;
         };
+
+        window.onload = function() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+
+        if (!isMobile) {
+            window.location.href = "https://quasar-c.github.io";
+        }
+        };
     </script>
 </body>
 </html>
