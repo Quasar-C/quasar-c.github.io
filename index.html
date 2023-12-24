@@ -12,6 +12,11 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
     </head>
     <body>
+        <script>
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                window.location.href = "/unavailable-mobile.html";
+            }
+        </script>
         <div id="descriptionContainer">
             <h2>home - projects:</h2>
             <p>piracy sites <a href="https://quasar-c.github.io/projects/piracy-list" target="_blank">visit here</a></p>
