@@ -10,6 +10,11 @@
             text-align: center;
             padding: 50px;
             background-color: black;
+            display: none;
+        }
+
+        noscript {
+            display: block;
         }
         h1 {
             color: #333;
@@ -26,5 +31,28 @@
 <body>
     <h1>Oops! The page is lost in space.</h1>
     <p>We can't find the page you're looking for. <a href="/">Take me back to Earth!</a></p>
+    <noscript>
+        <p>JavaScript is disabled in your browser. Please enable it to continue.</p>
+    </noscript>
+    <script>
+        document.body.style.display = 'block';
+
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        function ctrlShiftKey(e, keyCode) {
+        return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+        }
+
+        document.onkeydown = (e) => {
+        if (
+            event.keyCode === 123 ||
+            ctrlShiftKey(e, 'I') ||
+            ctrlShiftKey(e, 'J') ||
+            ctrlShiftKey(e, 'C') ||
+            (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+        )
+            return false;
+        };
+    </script>
 </body>
 </html>

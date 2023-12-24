@@ -11,6 +11,11 @@
             padding: 50px;
             background-color: #f5f5f5;
             margin: 0;
+            display: none;
+        }
+
+        noscript {
+            display: block;
         }
 
         h1 {
@@ -36,5 +41,28 @@
 <body>
     <h1>Site Unavailable</h1>
     <p>This site is only accessible from computers. Please visit from a computer to access the content.</p>
+    <noscript>
+        <p>JavaScript is disabled in your browser. Please enable it to continue.</p>
+    </noscript>
+    <script>
+        document.body.style.display = 'block';
+
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        function ctrlShiftKey(e, keyCode) {
+        return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+        }
+
+        document.onkeydown = (e) => {
+        if (
+            event.keyCode === 123 ||
+            ctrlShiftKey(e, 'I') ||
+            ctrlShiftKey(e, 'J') ||
+            ctrlShiftKey(e, 'C') ||
+            (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+        )
+            return false;
+        };
+    </script>
 </body>
 </html>
