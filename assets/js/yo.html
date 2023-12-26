@@ -12,35 +12,7 @@
         noscript {
             display: block;
         }
-
-        .popup {
-            position: fixed;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background-color: #ffffff;
-            border: 1px solid #ccc;
-            z-index: 9999;
-            color: black;
-        }
-
-        .popup-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $.getJSON("http://ip-api.com/json/?fields=61439",
-            function (data) {
-            $("#gfg").html(data.query);
-            $("#gfg1").html(data.country);
-            $("#gfg2").html(data.city);
-            $("#gfg3").html(data.as);
-        })
-    </script>
 </head>
 <body>
     <noscript>
@@ -53,31 +25,8 @@
     <h1>what u doin? Seriously bro. 🤨🤨🤨 what u doin? Seriously bro. 🤨🤨🤨</h1>
     <h1>what u doin? Seriously bro. 🤨🤨🤨 what u doin? Seriously bro. 🤨🤨🤨</h1>
     <img src="https://media1.tenor.com/m/QA6mPKs100UAAAAC/caught-in.gif"><img src="https://media1.tenor.com/m/v1hEPTpixqgAAAAC/get-out-of-here-get-outta-here.gif">
-    <div id="popup" class="popup">
-        <h2>IP LEAKED LOL</h2>
-        <h3>IP:</h3>
-		<p id="gfg"></p>
-        <h3>Location:</h3>
-        <p>Country: <a id="gfg1"></a></p>
-        <p>City: <a id="gfg2"></a></p>
-    </div>
     <script>
         document.body.style.display = "block";
-
-        function togglePopup() {
-            var popupContainer = document.getElementById("popupContainer");
-            if (popupContainer.style.display === "none") {
-                popupContainer.style.display = "block";
-                setTimeout(function() {
-                    popupContainer.style.opacity = "1";
-                }, 10);
-            } else {
-                popupContainer.style.opacity = "0";
-                setTimeout(function() {
-                    popupContainer.style.display = "none";
-                }, 300);
-            }
-        }
 
         document.addEventListener('contextmenu', (e) => e.preventDefault());
 
