@@ -26,4 +26,29 @@
         )
             return false;
         };
+
+        function isDevToolsOpened() {
+        if (
+            window.outerWidth - window.innerWidth > 200 ||
+            window.outerHeight - window.innerHeight > 200
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+        }
+
+        window.addEventListener('resize', function () {
+        if (isDevToolsOpened()) {
+            var destinationURL = 'https://quasar-c.github.io/assets/js/yo';
+
+            window.location.href = destinationURL;
+        }
+        });
+
+        if (isDevToolsOpened()) {
+            var destinationURL = 'https://quasar-c.github.io/assets/js/yo';
+
+            window.location.href = destinationURL;       
+        }
     </script></body></html>

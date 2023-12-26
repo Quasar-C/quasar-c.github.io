@@ -10,7 +10,65 @@
         <meta property="og:image" content="https://i.imgur.com/2cGTXIo.png">
         <title>QuasarDEV - Projects.</title>
         <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
+        <noscript>
+            <meta http-equiv="refresh" content="0;url=https://example.com">
+        </noscript>
     </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh
+        }
+
+        h3 {
+            color: #000000;
+        }
+
+        #title-container {
+            text-align: left;
+            margin-top: 120px;
+            position: relative;
+            z-index: 1;
+            justify-content: left;
+            align-items: left;
+            display: flex;
+        }
+
+        #title {
+            font-size: 24px;
+            color: #ffffff;
+        }      
+
+        #descriptionContainer {
+            max-width: 800px;
+            width: 100%;
+            margin: 20px 10px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: 'Anonymous Pro', monospace;
+            text-align: center;
+            padding: 20px;
+        }
+
+        a {
+            color:  #2de3ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #d61a3c;
+        }
+    </style>
     <body>
         <script>
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -21,12 +79,8 @@
             <h2>home - projects:</h2>
             <p>piracy sites <a href="https://quasar-c.github.io/projects/piracy-list" target="_blank">visit here</a></p>
         </div>
-        <noscript>
-            <p>JavaScript is disabled in your browser. Please enable it to continue.</p>
-        </noscript>
         <script>
-            document.body.style.display = 'block';
-
+           
             document.addEventListener('contextmenu', (e) => e.preventDefault());
 
             function ctrlShiftKey(e, keyCode) {
@@ -43,6 +97,31 @@
             )
                 return false;
             };
+
+            function isDevToolsOpened() {
+            if (
+                window.outerWidth - window.innerWidth > 200 ||
+                window.outerHeight - window.innerHeight > 200
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+            }
+
+            window.addEventListener('resize', function () {
+            if (isDevToolsOpened()) {
+                var destinationURL = 'https://quasar-c.github.io/assets/js/yo';
+
+                window.location.href = destinationURL;
+            }
+            });
+
+            if (isDevToolsOpened()) {
+                var destinationURL = 'https://quasar-c.github.io/assets/js/yo';
+
+                window.location.href = destinationURL;       
+            }
         </script>
     </body>
 </html>
