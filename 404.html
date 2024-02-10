@@ -6,7 +6,7 @@
     <title>404 Not Found</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
             background-color: black;
@@ -29,8 +29,8 @@
     </style>
 </head>
 <body>
-    <h1>Oops! The page is lost in space.</h1>
-    <p>We can't find the page you're looking for. <a href="/">Take me back to Earth!</a></p>
+    <h1>Page not found.</h1>
+    <p>We can't find the page you're looking for. <p id="countdown"></p></p>
     <noscript>
         <p>JavaScript is disabled in your browser. Please enable it to continue.</p>
     </noscript>
@@ -54,5 +54,38 @@
             return false;
         };
     </script>
+    <script>
+          function updateTitle(seconds) {
+            document.title = `Redirecting in ${seconds} seconds...`;
+          }
+        
+          function updateCountdown(seconds) {
+            document.getElementById('countdown').innerText = `Redirecting in ${seconds} seconds...`;
+          }
+        
+          function startTimer(duration) {
+            var timer = duration;
+            var interval = setInterval(function () {
+              seconds = parseInt(timer % 60, 10);
+        
+              updateTitle(seconds);
+              updateCountdown(seconds);
+        
+              if (--timer < 0) {
+                clearInterval(interval);
+                window.location.href = "/";
+              }
+            }, 1000);
+          }
+        
+          function initializeTimer() {
+            var fiveSeconds = 5;
+            startTimer(fiveSeconds);
+          }
+        
+          window.onload = function () {
+            initializeTimer();
+          };
+        </script>
 </body>
 </html>
