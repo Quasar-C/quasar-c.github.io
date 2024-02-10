@@ -1,127 +1,89 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="https://i.imgur.com/06tFICr.png" type="image/x-icon">
-        <meta name="description" content="QuasarDEV - Projects">
-        <meta property="og:description" content="QuasarDEV - Projects">
-        <meta property="og:title" content="QuasarDEV Projects">
-        <meta property="og:image" content="https://i.imgur.com/2cGTXIo.png">
-        <title>QuasarDEV - Projects.</title>
-        <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
-        <noscript>
-            <meta http-equiv="refresh" content="0;url=https://quasar-c.github.io/assets/js/yo">
-        </noscript>
-    </head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moved">
+    <title>Moving....</title>
+    <script>
+      function setViewport() {
+        var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        
+        var scale = viewportWidth / 800;
+        
+        var viewportMetaTag = document.querySelector('meta[name="viewport"]');
+        if (viewportMetaTag) {
+          viewportMetaTag.content = 'width=device-width, initial-scale=' + scale + ', user-scalable=no';
+        }
+      }
+
+      window.onload = setViewport;
+    </script>
+    <script>
+      function updateTitle(seconds) {
+        document.title = `Redirecting in ${seconds} seconds...`;
+      }
+    
+      function updateCountdown(seconds) {
+        document.getElementById('countdown').innerText = `Redirecting in ${seconds} seconds...`;
+      }
+    
+      function startTimer(duration) {
+        var timer = duration;
+        var interval = setInterval(function () {
+          seconds = parseInt(timer % 60, 10);
+    
+          updateTitle(seconds);
+          updateCountdown(seconds);
+    
+          if (--timer < 0) {
+            clearInterval(interval);
+            window.location.href = "https://znqkl.pages.dev;
+          }
+        }, 1000);
+      }
+    
+      function initializeTimer() {
+        var fiveSeconds = 5;
+        startTimer(fiveSeconds);
+      }
+    
+      window.onload = function () {
+        initializeTimer();
+      };
+    </script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: black;
+        font-family: Arial, sans-serif;
+      }
 
-        h3 {
-            color: #000000;
-        }
+      #container {
+        gap: 20px;
+        max-width: 600px;
+        background-color: #121212;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
-        #title-container {
-            text-align: left;
-            margin-top: 120px;
-            position: relative;
-            z-index: 1;
-            justify-content: left;
-            align-items: left;
-            display: flex;
-        }
-
-        #title {
-            font-size: 24px;
-            color: #ffffff;
-        }      
-
-        #descriptionContainer {
-            max-width: 800px;
-            width: 100%;
-            margin: 20px 10px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            font-family: 'Anonymous Pro', monospace;
-            text-align: center;
-            padding: 20px;
-        }
-
-        a {
-            color:  #2de3ff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #d61a3c;
-        }
+      p, h1 {
+        color: white;
+      }
     </style>
-    <body>
-        <script>
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                window.location.href = "/unavailable-mobile.html";
-            }
-        </script>
-        <div id="descriptionContainer">
-            <h2>home - projects:</h2>
-            <p>piracy sites <a href="https://quasar-c.github.io/projects/piracy-list" target="_blank">visit here</a></p>
-        </div>
-        <script>
-           
-            document.addEventListener('contextmenu', (e) => e.preventDefault());
-
-            function ctrlShiftKey(e, keyCode) {
-            return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-            }
-
-            document.onkeydown = (e) => {
-            if (
-                event.keyCode === 123 ||
-                ctrlShiftKey(e, 'I') ||
-                ctrlShiftKey(e, 'J') ||
-                ctrlShiftKey(e, 'C') ||
-                (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
-            )
-                return false;
-            };
-
-            function isDevToolsOpened() {
-            if (
-                window.outerWidth - window.innerWidth > 200 ||
-                window.outerHeight - window.innerHeight > 200
-            ) {
-                return true;
-            } else {
-                return false;
-            }
-            }
-
-            window.addEventListener('resize', function () {
-            if (isDevToolsOpened()) {
-                var destinationURL = 'https://quasar-c.github.io/assets/js/yo';
-
-                window.location.href = destinationURL;
-            }
-            });
-
-            if (isDevToolsOpened()) {
-                var destinationURL = 'https://quasar-c.github.io/assets/js/yo';
-
-                window.location.href = destinationURL;       
-            }
-        </script>
-    </body>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Moved.</h1>
+      <p>the page has been moved.</p>
+      <p id="countdown"></p>
+    </div>
+  </body>
 </html>
